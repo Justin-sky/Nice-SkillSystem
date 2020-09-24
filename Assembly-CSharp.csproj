@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{8D8D032C-B707-C25A-820A-E37463617778}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -85,11 +84,6 @@
     <Compile Include="Assets\Scripts\SkillSystem\Buff\Types\SelectTargetType.cs" />
     <Compile Include="Assets\Scripts\SkillSystem\Buff\Cfg\ValueCheckCfg.cs" />
     <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\AcctorAttr\ActorAttr.cs" />
-    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\SkillInfo\BoxInfo\BoxInfo.cs" />
-    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\SkillInfo\Ctrl\ChangeCtrl.cs" />
-    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\SkillInfo\Ctrl\SkillCtrlType.cs" />
-    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\SkillInfo\Trigger\ActorSkillTriggerCfg.cs" />
-    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\SkillInfo\Trigger\SkillTriggerType.cs" />
     <Compile Include="Assets\Scripts\SkillSystem\Skill\CommandType.cs" />
     <Compile Include="Assets\Scripts\SkillSystem\Buff\Event\BuffValidCfg.cs" />
     <Compile Include="Assets\Scripts\SkillSystem\Buff\Event\BufferCfgDuration.cs" />
@@ -99,10 +93,51 @@
     <Compile Include="Assets\Scripts\SkillSystem\Buff\Event\SelectTargetFilter.cs" />
     <Compile Include="Assets\Scripts\SkillSystem\Buff\Event\SelectTargetFilterActor.cs" />
     <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\ActorCfg.cs" />
-    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\ActInfo\FrameInfo.cs" />
-    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\SkillInfo\BoxInfo\HitInfo.cs" />
-    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\SkillInfo\Ctrl\ActorSkillCtrlerCfg.cs" />
+    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\SkillInfo\Ctrl\ChangeCtrl.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\Deployer\SkillDeployer.cs" />
     <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\SkillInfo\SkillInfo.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\States\DeadState.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\Deployer\MeleeSkillDeployer.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\ImpactEffects\DamageImpact.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\States\AttackingState.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\Selectors\IAttackSelector.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\States\IdleState.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\Common\SelectorType.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\Triggers\WithoutAttackRangeTrigger.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\FSMBase.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\Selectors\SelectorAttackSelector.cs" />
+    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\SkillInfo\BoxInfo\BoxInfo.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\GameObjectPool.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\Common\SkillAttackType.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\ImpactEffects\CostSPImpact.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\Character\CharacterSelected.cs" />
+    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\SkillInfo\Trigger\ActorSkillTriggerCfg.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\FSMState.cs" />
+    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\SkillInfo\Ctrl\SkillCtrlType.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\Triggers\SawTargetTrigger.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\Triggers\NoHealthTrigger.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\ImpactEffects\IImpactEffect.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\Triggers\ReachTargetTrigger.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\Triggers\KilledTargetTrigger.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\Common\PatrolMode.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\Character\CharacterSkillSystem.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\Triggers\LoseTargetTrigger.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\States\PatrollingState.cs" />
+    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\SkillInfo\Ctrl\ActorSkillCtrlerCfg.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\Character\CharacterInputController.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\Character\CharacterStatus.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\FSMTrigger.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\Deployer\DeployerConfigFactory.cs" />
+    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\SkillInfo\Trigger\SkillTriggerType.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\Common\FSMTriggerID.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\Triggers\CompletePatrolTrigger.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\Helper\ArrayHelper.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\Common\FSMStateID.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\FSM\States\PursuitState.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\Common\SkillData.cs" />
+    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\SkillInfo\BoxInfo\HitInfo.cs" />
+    <Compile Include="Assets\Scripts\Runtime\SkillSystem\Character\CharacterSkillManager.cs" />
+    <Compile Include="Assets\Scripts\SkillSystem\Skill\Actor\ActInfo\FrameInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -667,7 +702,8 @@
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
